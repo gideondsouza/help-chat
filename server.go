@@ -11,6 +11,8 @@ func main() {
 	r := gin.Default()
 	m := melody.New()
 
+	r.Static("/assets", "./assets")
+
 	r.GET("/", func(c *gin.Context) {
 		http.ServeFile(c.Writer, c.Request, "index.html")
 	})
